@@ -1,14 +1,18 @@
-<!-- app/views/categories/show.html.erb -->
+<div class="container mx-auto mt-8">
+  <div class="max-w-md mx-auto bg-white shadow-md rounded p-6 mb-4">
+    <h1 class="text-2xl font-bold mb-4"><%= @category.name %></h1>
 
-<h1><%= @category.name %></h1>
+    <p class="mb-2"><strong>Products:</strong></p>
+    <ul class="list-disc ml-4">
+      <% @products.each do |product| %>
+        <li><%= link_to product.name, product, class: 'text-blue-500 hover:text-blue-700' %></li>
+      <% end %>
+    </ul>
 
-<p><strong>Products:</strong></p>
-<ul>
-  <% @products.each do |product| %>
-    <li><%= link_to product.name, product %></li>
-  <% end %>
-</ul>
-
-<%= link_to 'Edit', edit_category_path(@category) %>
-<%= link_to 'Delete', @category, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Back to Categories', categories_path %>
+    <div class="flex justify-between mt-4">
+      <%= link_to 'Edit', edit_category_path(@category), class: 'text-blue-500 hover:text-blue-700' %>
+      <%= link_to 'Delete', @category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-red-500 hover:text-red-700' %>
+      <%= link_to 'Back to Categories', categories_path, class: 'text-gray-500 hover:text-gray-700' %>
+    </div>
+  </div>
+</div>

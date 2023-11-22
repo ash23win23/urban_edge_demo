@@ -14,8 +14,12 @@
   <body>
     <%= render 'layouts/navbar' %>
     
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% flash.each do |key, value| %>
+      <div class="<%= flash_class(key) %> alert my-4 px-4 py-2 rounded-md">
+        <%= value %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
