@@ -1,21 +1,25 @@
 <!-- app/views/products/index.html.erb -->
 
-<h1>Products</h1>
+<div class="container mx-auto mt-8">
+  <h1 class="text-4xl font-bold mb-4">Product List</h1>
 
-<% @products.each do |product| %>
-  <div class="product">
-    <h2><%= link_to product.name, product %></h2>
-    <p><strong>Category:</strong> <%= product.category.name %></p>
-    <p><strong>Description:</strong> <%= product.description %></p>
-    <p><strong>Price:</strong> <%= number_to_currency(product.price) %></p>
-
-    <% if user_signed_in? %>
-      <p><%= link_to 'Edit', edit_product_path(product) %></p>
-      <p><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <% @products.each do |product| %>
+      <div class="bg-white overflow-hidden shadow rounded-lg">
+        <!-- No image for now -->
+        <div class="p-6">
+          <%= link_to product_path(product) do %>
+            <h2 class="text-xl font-semibold mb-2"><%= product.name %></h2>
+          <% end %>
+          <p class="text-gray-600 mb-2"><%= product.category.name %></p>
+          <p class="text-gray-600 mb-4"><%= product.description %></p>
+          <p class="text-blue-500 font-bold"><%= number_to_currency(product.price) %></p>
+        </div>
+      </div>
     <% end %>
   </div>
-<% end %>
 
-<% if user_signed_in? %>
-  <p><%= link_to 'New Product', new_product_path %></p>
-<% end %>
+  <% if user_signed_in? %>
+    <p class="mt-8"><%= link_to 'New Product', new_product_path, class: 'text-blue-500 hover:text-blue-700' %></p>
+  <% end %>
+</div>

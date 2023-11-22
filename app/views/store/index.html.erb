@@ -1,9 +1,13 @@
+<div class="container mx-auto mt-8">
+  <h1 class="text-4xl font-bold mb-4">Welcome to Urban Edge</h1>
 
-<h1>Welcome to Your E-Commerce Site!</h1>
-
-<% if user_signed_in? %>
-  <p>Welcome, <%= current_user.email %>! <br>
-  <%= button_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
-<% else %>
-  <p><%= link_to 'Sign In', new_user_session_path %> or <%= link_to 'Sign Up', new_user_registration_path %></p>
-<% end %>
+  <% if user_signed_in? %>
+    <p class="text-lg mb-4">Hello, <%= current_user.email %>! You are signed in.</p>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600' %>
+  <% else %>
+    <div class="flex space-x-4">
+      <%= link_to 'Sign in', new_user_session_path, class: 'bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600' %>
+      <%= link_to 'Sign up', new_user_registration_path, class: 'bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600' %>
+    </div>
+  <% end %>
+</div>
