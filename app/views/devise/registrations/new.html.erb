@@ -1,10 +1,36 @@
-<!-- app/views/devise/registrations/new.html.erb -->
 
 <div class="flex items-center justify-center h-screen">
   <div class="w-full max-w-md">
     <h2 class="text-2xl font-bold mb-4">Sign up</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" }) do |f| %>
+      <%= devise_error_messages! %>
+      
+      <div class="mb-4">
+        <%= f.label :first_name, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.text_field :first_name, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+    
+      <div class="mb-4">
+        <%= f.label :last_name, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.text_field :last_name, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+    
+      <div class="mb-4">
+        <%= f.label :address, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.text_field :address, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+    
+      <div class="mb-4">
+        <%= f.label :phone_number, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.text_field :phone_number, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+    
+      <div class="mb-4">
+        <%= f.label :date_of_birth, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.date_field :date_of_birth, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+      
       <div class="mb-4">
         <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %>
         <%= f.email_field :email, class: "appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" %>

@@ -6,6 +6,31 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="mb-4">
+        <%= f.label :first_name, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.text_field :first_name, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="mb-4">
+        <%= f.label :last_name, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.text_field :last_name, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="mb-4">
+        <%= f.label :address, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.text_field :address, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="mb-4">
+        <%= f.label :phone_number, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.text_field :phone_number, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="mb-4">
+        <%= f.label :date_of_birth, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.date_field :date_of_birth, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="mb-4">
         <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" %>
       </div>
